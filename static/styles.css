@@ -1,0 +1,39 @@
+body {
+    font-family: Arial;
+    margin: 40px;
+    background-color: #f4f4f4;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+th {
+    background: #222;
+    color: white;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px;
+    margin-top: 10px;
+}
+.positive {
+    color: green;
+    font-weight: bold;
+}
+.negative {
+    color: red;
+    font-weight: bold;
+}
+.top-mover {
+    background-color: #fffae6; /* light yellow highlight */
+}
