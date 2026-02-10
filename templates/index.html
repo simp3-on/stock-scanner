@@ -5,30 +5,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <meta http-equiv="refresh" content="120">
 </head>
-
 <body>
-
 <div class="container">
-
     <h2>Stock Scanner</h2>
-
     <form method="POST">
         <label>Select Market:</label>
         <select name="market">
             <option value="US">US Market</option>
             <option value="EU">European Market</option>
         </select>
-
         <label>
             <input type="checkbox" name="relaxed" {% if relaxed %}checked{% endif %}>
             Relaxed Mode
         </label>
-
         <button type="submit">Run Scan</button>
     </form>
-
     <br>
-
     <table>
         <tr>
             <th>Symbol</th>
@@ -41,17 +33,14 @@
             <th>Volume</th>
             <th>Relative Volume</th>
         </tr>
-
         {% for stock in results %}
         <tr {% if loop.index <= 3 %}class="top-mover"{% endif %}>
             <td>{{ stock.symbol }}</td>
             <td>{{ stock.name }}</td>
             <td>{{ stock.price }}</td>
-
             <td class="{% if stock.percent_change >= 0 %}positive{% else %}negative{% endif %}">
                 {{ stock.percent_change }}%
             </td>
-
             <td>{{ stock.open }}</td>
             <td>{{ stock.high }}</td>
             <td>{{ stock.low }}</td>
@@ -59,10 +48,7 @@
             <td>{{ stock.relative_volume }}</td>
         </tr>
         {% endfor %}
-
     </table>
-
 </div>
-
 </body>
 </html>
