@@ -3,7 +3,7 @@ from tickers import get_us_tickers, get_eu_tickers
 
 def scan_market(market="US", relaxed=False):
     """
-    Fast stock scanner with company names.
+    Stock scanner with company names.
     Uses batch yf.download(), skips market cap.
     """
     results = []

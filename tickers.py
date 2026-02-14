@@ -24,7 +24,10 @@ def get_us_tickers():
     symbol_col = get_column(df, ["Symbol", "Ticker"])
     name_col = get_column(df, ["Security", "Company"])
 
-    return {symbol_col[i].strip(): name_col[i].strip() for i in range(len(symbol_col))}
+    return {
+        symbol_col[i].strip().replace(".", "-"): name_col[i].strip()for i in range(len(symbol_col))
+        }
+
 
 def get_eu_tickers():
     """
